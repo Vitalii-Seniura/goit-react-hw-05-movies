@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getMoviesBySearchQuery } from '../../API';
-import { useSearchParams, Link, useLocation } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
