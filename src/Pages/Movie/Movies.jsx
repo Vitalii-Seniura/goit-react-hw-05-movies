@@ -40,7 +40,7 @@ const Movies = () => {
       <div>
         <ul>
           {movies.map(movie => (
-            <Link to={`/movies/${movie.id}`} movieId={movie.id} key={movie.id}>
+            <Link to={`/movies/${movie.id}`} key={movie.id}>
               <li key={movie.id}>{movie.title ?? movie.original_title}</li>
             </Link>
           ))}

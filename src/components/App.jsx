@@ -12,6 +12,9 @@ import Layout from './Layout/Layout';
 
 import Home from '../Pages/Home/Home';
 import Movies from '../Pages/Movie/Movies';
+import MovieDetails from '../Pages/MovieDetails/MovieDetails';
+import Cast from '../Pages/Cast/Cast';
+import Reviews from '../Pages/Reviews/Reviews';
 
 export const App = () => {
   return (
@@ -21,10 +24,10 @@ export const App = () => {
           <Route index element={<Home />} />
           {/* <Route path="home" element={<Home />} /> */}
           <Route path="movies" element={<Movies />} />
-          {/* <Route path="movies/:movieId" element={<MovieDetails />}>
+          <Route path="movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
-          </Route> */}
+          </Route>
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>
