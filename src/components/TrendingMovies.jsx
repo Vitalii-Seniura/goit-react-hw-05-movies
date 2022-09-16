@@ -20,7 +20,7 @@ const TrendingMoviesList = () => {
       {!!trendingMovies?.length && (
         <ul>
           {trendingMovies.map(movie => (
-            <Link to={`/${movie.id}`} key={movie.id}>
+            <Link to={`/movies/${movie.id}`} key={movie.id}>
               <li key={movie.id}>{movie.title ?? movie.original_title}</li>
             </Link>
           ))}

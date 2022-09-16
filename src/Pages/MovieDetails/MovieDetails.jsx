@@ -11,7 +11,9 @@ import { toast } from 'react-toastify';
 import { getMovieDetailsById, IMAGE_URL } from '../../API';
 
 const MoviesDetails = () => {
-  const { state } = useLocation();
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/movies';
+  //   const { state } = useLocation();
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState({});
 
@@ -27,7 +29,9 @@ const MoviesDetails = () => {
 
   return (
     <>
-      <Link to={state}>Go back</Link>
+      <button type="button">
+        <Link to={backLinkHref}>Go back</Link>
+      </button>
       {!movieData?.length && (
         <>
           <div>
@@ -48,12 +52,12 @@ const MoviesDetails = () => {
             Additional information
             <ul>
               <li>
-                <NavLink state={state} to="cast">
+                <NavLink state={location.state} to="cast">
                   Cast
                 </NavLink>
               </li>
               <li>
-                <NavLink state={state} to="reviews">
+                <NavLink state={location.state} to="reviews">
                   Reviews
                 </NavLink>
               </li>
