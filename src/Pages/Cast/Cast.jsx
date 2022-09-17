@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import { getMovieCastById, IMAGE_URL } from '../../API';
+import css from './Cast.module.css';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -29,7 +30,11 @@ const Cast = () => {
             <li key={cast_id}>
               <div>
                 {profile_path ? (
-                  <img src={`${IMAGE_URL}w500${profile_path}`} alt={name} />
+                  <img
+                    src={`${IMAGE_URL}w500${profile_path}`}
+                    alt={name}
+                    className={css.cast_img}
+                  />
                 ) : (
                   <p>no photo</p>
                 )}

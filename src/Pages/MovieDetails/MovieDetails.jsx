@@ -7,12 +7,13 @@ import {
 } from 'react-router-dom';
 import { Suspense, useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-
+import css from './MovieDetails.module.css';
 import { getMovieDetailsById, IMAGE_URL } from '../../API';
 
 const MoviesDetails = () => {
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/movies';
+  console.log(location.state);
+  const backLinkHref = location.state?.from ?? '/';
   //   const { state } = useLocation();
   const { movieId } = useParams();
   const [movieData, setMovieData] = useState({});
@@ -26,10 +27,11 @@ const MoviesDetails = () => {
       })
       .catch(err => toast.error(err));
   }, [movieId]);
+  console.log(location);
 
   return (
-    <>
-      <button type="button">
+    <div className={css.page}>
+      <button type="button" className={css.btn}>
         <Link to={backLinkHref}>Go back</Link>
       </button>
       {!movieData?.length && (
@@ -48,7 +50,7 @@ const MoviesDetails = () => {
           <p>Genres</p>
           <p>{genres?.map(genre => genre.name).join(', ') || '-'}</p>
 
-          <div>
+          <div className={css.container}>
             Additional information
             <ul>
               <li>
@@ -71,7 +73,7 @@ const MoviesDetails = () => {
           </>
         </>
       )}
-    </>
+    </div>
   );
 };
 

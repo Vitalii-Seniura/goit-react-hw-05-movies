@@ -1,0 +1,28 @@
+.container {
+  box-shadow: 2px 2px 5px rgba(0.3, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.page {
+  padding: 25px;
+}
+.btn {
+  font-size: 25px;
+  width: 130px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.form {
+  margin: 15px;
+}
+.input {
+  width: 250px;
+  height: 30px;
+  font-size: 20px;
+}
+.input_btn {
+  height: 35px;
+  font-size: 20px;
+}
